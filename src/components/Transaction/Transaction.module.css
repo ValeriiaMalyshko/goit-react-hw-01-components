@@ -1,0 +1,23 @@
+.table {
+  border-collapse: collapse;
+  width: 600px;
+  text-align: center;
+  margin: 20px auto;
+}
+tr,
+th,
+td {
+  height: 50px;
+  padding: 10px;
+  border: 1px solid #2a2a2a;
+}
+.head {
+  background-color: blueviolet;
+}
+.row:nth-child(n + 1) {
+  background-color: #ffffff;
+}
+
+.row:nth-child(2n + 1) {
+  background-color: #f2f2f2;
+}
