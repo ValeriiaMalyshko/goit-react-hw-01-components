@@ -1,26 +1,17 @@
-import Friends from './Friends';
 import PropTypes from 'prop-types';
 import s from './Friends.module.css';
 
-export default function FriendListItem({ elements }) {
+export default function FriendListItem({ avatar, name, status }) {
   return (
-    <ul className={s.list}>
-      {elements.map(element => (
-        <Friends
-          key={element.id}
-          avatar={element.avatar}
-          name={element.name}
-          status={element.isOnline}
-        />
-      ))}
-    </ul>
+    <li className={s.item}>
+      <span className={status ? `${s.status}` : `${s.noActive}`}></span>
+      <img className={s.avatar} src={avatar} alt={name} width="48" />
+      <p className={s.name}>{name}</p>
+    </li>
   );
 }
-
 FriendListItem.propTypes = {
-  elements: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    })
-  ),
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  status: PropTypes.bool.isRequired,
 };

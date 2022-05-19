@@ -13,12 +13,12 @@ export default function TransactionHistory({ elements }) {
         </tr>
       </thead>
       <tbody>
-        {elements.map(element => (
+        {elements.map(({ id, type, amount, currency }) => (
           <Transaction
-            key={element.id}
-            type={element.type}
-            amount={element.amount}
-            currency={element.currency}
+            key={id}
+            type={type}
+            amount={amount}
+            currency={currency}
           />
         ))}
       </tbody>
