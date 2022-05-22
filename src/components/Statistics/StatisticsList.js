@@ -16,7 +16,7 @@ export default function StatisticsList({ title, stats }) {
 }
 
 StatisticsList.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   elements: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
